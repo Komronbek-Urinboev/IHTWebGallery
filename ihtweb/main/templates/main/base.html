@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}IHT Gallery{% endblock %}</title>
+  <!-- Общие стили – например, Bootstrap и ваши базовые стили -->
+  <link rel="stylesheet" href="{% static 'main/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+  {% block extra_css %}{% endblock %}
+</head>
+<body>
+  {% block navigation_bar %}
+  <!-- Этот блок можно переопределить на отдельных страницах при необходимости -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="/">
+        <img src="{% static 'main/img/image-Photoroom.png' %}" alt="Логотип" style="width:60px; height:60px;">
+        <span class="ms-2">IHT Gallery</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="/">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about/">О Галерее</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="linksDropdown" role="button" data-bs-toggle="dropdown"
+               aria-expanded="false">Ссылки</a>
+            <ul class="dropdown-menu" aria-labelledby="linksDropdown">
+              <li><a class="dropdown-item" href="https://www.youtube.com" target="_blank">YouTube</a></li>
+              <li><a class="dropdown-item" href="https://telegram.org" target="_blank">Telegram</a></li>
+              <li><a class="dropdown-item" href="https://www.instagram.com" target="_blank">Instagram</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  {% endblock navigation_bar %}
+
+  <!-- Основное содержимое, которое переопределяется в дочерних шаблонах -->
+  <div class="container my-4">
+    {% block content %}
+    {% endblock content %}
+  </div>
+
+  <!-- Общие скрипты -->
+  <script src="{% static 'main/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'main/js/main.js' %}"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

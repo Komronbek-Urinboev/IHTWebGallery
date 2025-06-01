@@ -1,0 +1,109 @@
+{% load static %}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+header {
+    width: 100%;
+    flex-direction: row;
+}
+header .logo img{
+    width: 60px;
+    height: 60px;
+}
+header .navbar-brand{
+    padding-left: 10px;
+}
+.carousel-inner {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.carousel-item {
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out; 
+}
+.carousel-item img {
+    border-radius: 10px; 
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.carousel-inner img {
+    margin-top: 10px;
+    border-radius: 10px;
+    width: 100%; 
+    max-height: 500px; 
+    object-fit: cover; 
+  }
+.images .line{
+    border-radius: 10px;
+    width: 100;
+    height: 20px;
+    background-color: rgb(0, 153, 255);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.images img{
+    padding-top: 10px;
+}
+.images .btn-primary{
+    background-color: rgb(0, 153, 255);
+    border-color: rgb(0, 153, 255);
+}
+.foot{
+    background-color: rgb(44, 43, 43);
+    height: 200px;
+}
+.foot h2{
+    color: gray;
+    display: block;
+    padding-top: 10px;
+}
+.foot .col-2{
+    color: gray;
+    display: block;
+}
+.foot h3 {
+    font-size: 18px;
+    display: block;
+    margin-top: 90px;
+    text-align: center;
+}
+.grid-image {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  /* Ограничение заголовка одной строкой с эллипсисом, если он длинный */
+  .card-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 5px;
+  }
+
+  /* Описание ограничено двумя строками с эллипсисом */
+  .uniform-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* число строк */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.5em;
+    height: 3em; /* 2 строки по 1.5em */
+    margin-bottom: 0;
+  }
+
+  /* Дополнительные стили для карточки, чтобы все карточки выглядели единообразно */
+  .uniform-card {
+    /* Можно задать фиксированную минимальную высоту для card-body, если нужно */
+    height: 100%;
+  }
+
+  /* Для равномерного расположения карточек в 4 колонки (если окно достаточное) */
+  .images .col-md-3 {
+    padding: 0 10px;
+  }
